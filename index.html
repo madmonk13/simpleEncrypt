@@ -8,13 +8,14 @@
             color: lightgreen;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        input, textarea {
+        input, textarea, button {
             background-color: transparent;
             color: lightgreen;
             border: 1px solid silver;
             padding: 1em;
             border-radius: 1em;
             border-color: lightgreen;
+            margin: 1em;
         }
     </style>
 </head>
@@ -23,10 +24,11 @@
     <input type="radio" id="encrypt" name="action" value="encrypt" checked>
     <label for="encrypt">Encrypt</label>
     <input type="radio" id="decrypt" name="action" value="decrypt">
-    <label for="decrypt">Decrypt</label><br>
+    <label for="decrypt">Decrypt</label>
+    <button onclick="processText()">Process</button>
+    <br>
     <textarea id="inputText" rows="20" cols="80" placeholder="Enter text here" onkeyup="processText()"></textarea><br>
     <textarea id="outputText" rows="20" cols="80" placeholder="Output text will appear here" readonly></textarea><br>
-    <button onclick="processText()">Process</button>
 
     <script>
         async function getCryptoKey(passphrase) {
